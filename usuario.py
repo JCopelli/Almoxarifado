@@ -24,6 +24,7 @@ class Usuario:
                     print("As senhas digitadas não são iguais, tente novamente.")
                     nova_senha = input("Digite a nova senha: ")
                     confirma_senha = input("Confirme a nova senha: ")
+                self.__senha = nova_senha
                 print("Senha alterada com sucesso!")
             else:
                 self.__senha = nova_senha
