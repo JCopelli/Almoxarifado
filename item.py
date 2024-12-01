@@ -1,17 +1,17 @@
 class Item:
-    def _init_(self, nome, estoque, un_medida, preco_un, valor_estoque):
+    def __init__(self, nome, estoque, un_medida, preco_un):
         self.__nome = nome
         self.__estoque = estoque
         self.__un_medida = un_medida
         self.__preco_un = preco_un
-        self.__valor_estoque = valor_estoque
+        self.__valor_estoque = self.__estoque * self.__preco_un
 
     def mostrar_informacoes(self):
         print(f"Produto: {self.__nome}")
         print(f"Quantidade em estoque: {self.__estoque}")
         print(f"Unidade de medida: {self.__un_medida}")
-        print(f"Valor unitário: {self._preco_un} $ por {self._un_medida}")
-        print(f"Valor em estoque: {self.__valor_estoque}")
+        print(f"Valor unitário: {self.__preco_un} $ por {self.__un_medida}")
+        print(f"Valor em estoque: {self.__valor_estoque}\n")
 
     def entrada_de_estoque(self, quantidade):
         self.__estoque += quantidade

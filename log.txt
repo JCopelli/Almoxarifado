@@ -1,5 +1,4 @@
-Usuario não autenticado tentou adicionar um item
-Usuario não autenticado tentou adicionar um item
-None
-Item Borracha removido por Copelli
-Item Borracha adicionado por Copelli
+Usuario não autenticado tentou adicionar um item às 2024-12-01 17:35:06.898548
+Usuario não autenticado tentou adicionar um item às 2024-12-01 17:36:40.346931
+Usuario não autenticado tentou adicionar um item às 2024-12-01 17:37:33.496803
+Item Lapiseira removido por Copelli às 2024-12-01 17:37:47.446877

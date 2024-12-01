@@ -2,6 +2,7 @@ import Almoxarifado
 import pickle
 import Usuario
 import pwinput
+import datetime
 
 almoxarifado_path = "C:/Users/joaop/OneDrive/Documentos/Almoxarifado/almoxarifado.pkl"
 
@@ -20,7 +21,7 @@ def salvar_alteracoes(dado, caminho):
 
 def registrar_log(log):
     with open(log_path, "a") as registros:  #grava os logs em um arquivo .txt
-        registros.write(f"{log}\n")
+        registros.write(f"{log} às {datetime.datetime.now()}\n")
 
 def ler_dados(caminho):
     try:
