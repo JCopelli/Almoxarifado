@@ -1,18 +1,19 @@
+import pwinput 
+
 class Usuario:
-    def __init__(self, nome, senha, autenticado=False):
+    def __init__(self, nome, senha): # autenticado=False
         self.__nome = nome
         self.__senha = senha
-        self.__autenticado = autenticado
+        self.__autenticado = False
     
     def login(self):
-        senha = input("Digite sua senha: ")
-        if senha == self.__senha:
-            self.__autenticado = True
-            print(f"O usuário {self.__nome} foi logado")
-            return self.__autenticado
-        else:
-            print("Senha incorreta. Digite uma senha válida!")
-            return self.__autenticado
+            senha = pwinput.pwinput(prompt = "Senha: ", mask = "*")
+            if senha == self.__senha:
+                self.__autenticado = True
+                print(f"Usuário {self.__nome} autenticado")
+            else:
+                print("Senha incorreta.Tente Novamente!")
+                return self.__autenticado
     
     def modificar_senha(self):
         senha_atual = input("Para definir uma nova senha, digite sua senha atual: ")
@@ -29,4 +30,21 @@ class Usuario:
                 self.__senha = nova_senha
                 print("Senha alterada com sucesso!")
         else:
-            print("A senha está incorreta!") 
+            print("A senha está incorreta!")
+
+    @property
+    def autenticado(self):
+        return self.__autenticado
+
+    @property
+    def nome(self):
+        return self.__nome
+
+    @property
+    def senha(self):
+        return self.__senha
+
+    def mostrar_informacoes(self):
+        print(self.__nome)
+        print(self.__senha)
+        print(self.__autenticado)

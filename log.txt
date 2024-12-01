@@ -1,0 +1,5 @@
+Usuario não autenticado tentou adicionar um item
+Usuario não autenticado tentou adicionar um item
+None
+Item Borracha removido por Copelli
+Item Borracha adicionado por Copelli
