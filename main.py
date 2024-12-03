@@ -4,11 +4,11 @@ import Usuario
 import pwinput
 import datetime
 
-almoxarifado_path = "C:/Users/joaop/OneDrive/Documentos/Almoxarifado/almoxarifado.pkl"
+almoxarifado_path = "C:/Users/TEMP.CCE.140/Documents/Almoxarifado/almoxarifado.pkl"
 
-usuarios_path = "C:/Users/joaop/OneDrive/Documentos/Almoxarifado/usuarios.pkl"
+usuarios_path = "C:/Users/TEMP.CCE.140/Documents/Almoxarifado/usuarios.pkl"
 
-log_path = "C:/Users/joaop/OneDrive/Documentos/Almoxarifado/log.txt"
+log_path = "C:/Users/TEMP.CCE.140/Documents/Almoxarifado/log.txt"
 
 def salvar_alteracoes(dado, caminho):
     try:
@@ -88,10 +88,21 @@ def main():
                 item.mostrar_informacoes()
             
         elif opcao == 5:
-            pass
+            item_entrada = input ("Digite o item que deseja incrementar: ")
+            if item_entrada in almoxarifado1.estoque:
+                almoxarifado1.estoque[item_entrada].entrada_de_estoque()
+                salvar_alteracoes(almoxarifado1, almoxarifado_path)
+            else:
+                print("O item que deseja incrementar não existe no estoque!")
+
 
         elif opcao == 6:
-            pass
+            item_saida = input ("Digite o item que deseja retirar: ")
+            if item_saida in almoxarifado1.estoque:
+                almoxarifado1.estoque[item_saida].saida_de_estoque()
+                salvar_alteracoes(almoxarifado1, almoxarifado_path)
+            else:
+                print("O item que deseja incrementar não existe no estoque!")
 
         elif opcao == 7:
             log = almoxarifado1.adicionar_item(usuario_atual)
