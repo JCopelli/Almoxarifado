@@ -13,16 +13,18 @@ class Item:
         print(f"Valor unitário: {self.__preco_un} $ por {self.__un_medida}")
         print(f"Valor em estoque: {self.__valor_estoque}\n")
 
-    def entrada_de_estoque(self, quantidade):
-        self.__estoque += quantidade
+    def entrada_de_estoque(self):
+        quantidade = input("Digite a quantidade que deseja adicionar: ")
+        self.__estoque = self.__estoque + float(quantidade)
         self.atualizar_estoque()
         return self.__estoque
 
-    def saida_de_estoque(self, quantidade):
-        if quantidade > self.__estoque:
+    def saida_de_estoque(self):
+        quantidade = input("Digite a quantidade que deseja retirar: ")
+        if float(quantidade) > self.__estoque:
             print("Não é possível retirar a quantidade desejada, pois não há disponível em estoque")
         else:
-            self.__estoque -= quantidade
+            self.__estoque -= float(quantidade)
             self.atualizar_estoque()
             return self.__estoque
 
@@ -40,5 +42,5 @@ class Item:
             return self.__preco_un
 
     def atualizar_estoque(self):
-        self._valor_estoque = self.estoque * self._preco_un
+        self.__valor_estoque = self.__estoque * self.__preco_un
         return self.__valor_estoque
