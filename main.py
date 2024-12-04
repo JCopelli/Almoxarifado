@@ -3,6 +3,7 @@ import pickle
 import Usuario
 import pwinput
 import datetime
+import os
 
 almoxarifado_path = "C:/Users/TEMP.CCE.140/Documents/Almoxarifado/almoxarifado.pkl"
 
@@ -41,6 +42,9 @@ def cadastro_usuario(usuarios):
     log = f"Usuario {nome} criado"
     return log
 
+def continuar_acao():
+    input("Pressione enter para continuar")
+
 def main():
 
     usuarios = {}
@@ -53,6 +57,7 @@ def main():
     opcao = 0
 
     while True:
+        os.system("cls")
         print("---------Menu---------")
         print("\n-> (1) Login") 
         print("-> (2) Alterar senha") #Requer Autenticação
@@ -68,12 +73,16 @@ def main():
         opcao = int(input("O que deseja fazer?\n"))
 
         if opcao == 1:
+            os.system("cls")
+            print("---------Login---------\n")
             usuario = input("Usuário: ")
             if usuario not in usuarios:
                 print("Usuário não cadastrado!")
+                continuar_acao()
             else:
                 usuarios[usuario].login()
                 usuario_atual = usuarios[usuario]
+                continuar_acao()
 
         elif opcao == 2:
             pass
@@ -82,44 +91,62 @@ def main():
             pass
 
         elif opcao == 4:
+            os.system("cls")
+            print("---------Estoque---------\n")
             inventario = ler_dados(almoxarifado_path)
             inventario = inventario.estoque
             for chave, item in inventario.items():
                 item.mostrar_informacoes()
+            continuar_acao()
             
         elif opcao == 5:
+            os.system("cls")
+            print("---------Entrade de estoque---------\n")
             item_entrada = input ("Digite o item que deseja incrementar: ")
             if item_entrada in almoxarifado1.estoque:
                 log = almoxarifado1.estoque[item_entrada].entrada_de_estoque(usuario_atual)
                 registrar_log(log)
                 salvar_alteracoes(almoxarifado1, almoxarifado_path)
+                continuar_acao()
             else:
                 print("O item que deseja incrementar não existe no estoque!")
+                continuar_acao()
 
 
         elif opcao == 6:
+            os.system("cls")
+            print("---------Saída de estoque---------\n")
             item_saida = input ("Digite o item que deseja retirar: ")
             if item_saida in almoxarifado1.estoque:
                 log = almoxarifado1.estoque[item_saida].saida_de_estoque(usuario_atual)
                 registrar_log(log)
                 salvar_alteracoes(almoxarifado1, almoxarifado_path)
+                continuar_acao()
             else:
                 print("O item que deseja incrementar não existe no estoque!")
+                continuar_acao()
 
         elif opcao == 7:
+            os.system("cls")
+            print("---------Cadastro de item---------\n")
             log = almoxarifado1.adicionar_item(usuario_atual)
             registrar_log(log)
             salvar_alteracoes(almoxarifado1, almoxarifado_path)
+            continuar_acao()
 
         elif opcao == 8:
+            os.system("cls")
+            print("---------Remoção de item---------\n")
             log = almoxarifado1.remover_item(usuario_atual)
             registrar_log(log)
             salvar_alteracoes(almoxarifado1, almoxarifado_path)
+            continuar_acao()
 
         elif opcao == 9:
             pass
 
         else:
+            os.system("cls")
             exit()
     
 if __name__ == "__main__":
