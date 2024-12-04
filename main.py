@@ -90,7 +90,8 @@ def main():
         elif opcao == 5:
             item_entrada = input ("Digite o item que deseja incrementar: ")
             if item_entrada in almoxarifado1.estoque:
-                almoxarifado1.estoque[item_entrada].entrada_de_estoque()
+                log = almoxarifado1.estoque[item_entrada].entrada_de_estoque(usuario_atual)
+                registrar_log(log)
                 salvar_alteracoes(almoxarifado1, almoxarifado_path)
             else:
                 print("O item que deseja incrementar não existe no estoque!")
@@ -99,7 +100,8 @@ def main():
         elif opcao == 6:
             item_saida = input ("Digite o item que deseja retirar: ")
             if item_saida in almoxarifado1.estoque:
-                almoxarifado1.estoque[item_saida].saida_de_estoque()
+                log = almoxarifado1.estoque[item_saida].saida_de_estoque(usuario_atual)
+                registrar_log(log)
                 salvar_alteracoes(almoxarifado1, almoxarifado_path)
             else:
                 print("O item que deseja incrementar não existe no estoque!")
