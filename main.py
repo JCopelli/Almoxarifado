@@ -1,14 +1,15 @@
 import Almoxarifado
 import pickle
 import Usuario
+import Item
 import pwinput
 import datetime
 
-almoxarifado_path = "C:/Users/joaop/OneDrive/Documentos/Almoxarifado/almoxarifado.pkl"
+almoxarifado_path = "C:/Users/lucas/lucas automação/POO/Trabalho 1/Almoxarifado/Almoxarifado/almoxarifado.pkl"
 
-usuarios_path = "C:/Users/joaop/OneDrive/Documentos/Almoxarifado/usuarios.pkl"
+usuarios_path = "C:/Users/lucas/lucas automação/POO/Trabalho 1/Almoxarifado/Almoxarifado/usuarios.pkl"
 
-log_path = "C:/Users/joaop/OneDrive/Documentos/Almoxarifado/log.txt"
+log_path = "C:/Users/lucas/lucas automação/POO/Trabalho 1/Almoxarifado/Almoxarifado/log.txt"
 
 def salvar_alteracoes(dado, caminho):
     try:
@@ -33,9 +34,7 @@ def ler_dados(caminho):
     except Exception as e:
         print(f"Erro ao ler o banco de dados: {e}")
 
-def cadastro_usuario(usuarios):
-    nome = input("Digite o nome do novo usuario: ")
-    senha = pwinput.pwinput(prompt = "Digite a senha do novo usuario: ", mask = "*")
+def cadastro_usuario(usuarios, nome, senha):
     usuarios[nome] = Usuario.Usuario(nome, senha)
     salvar_alteracoes(usuarios, usuarios_path)
     log = f"Usuario {nome} criado"
@@ -76,10 +75,15 @@ def main():
                 usuario_atual = usuarios[usuario]
 
         elif opcao == 2:
-            pass
+            log = usuario_atual.alterar_senha(usuario_atual)
+            registrar_log(log)
+            salvar_alteracoes(usuarios, usuarios_path)
             
         elif opcao == 3:
-            pass
+            nome = input("Digite o nome do novo usuario: ")
+            senha = pwinput.pwinput(prompt = "Digite a senha do novo usuario: ", mask = "*")
+            log = cadastro_usuario(usuarios, nome, senha)
+            registrar_log(log)
 
         elif opcao == 4:
             inventario = ler_dados(almoxarifado_path)
@@ -104,7 +108,9 @@ def main():
             salvar_alteracoes(almoxarifado1, almoxarifado_path)
 
         elif opcao == 9:
-            pass
+            log = usuario_atual.logout(usuario_atual)
+            registrar_log(log)
+            salvar_alteracoes(usuarios, usuarios_path)
 
         else:
             exit()
