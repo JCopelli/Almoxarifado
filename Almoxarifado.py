@@ -30,11 +30,11 @@ class Almoxarifado:
     def remover_item(self, usuario):
         if usuario == None:
             print("O usuário não autenticado. Efetue o login para ter acesso a essa função!")
-            log = f"Usuario não autenticado tentou adicionar um item"
+            log = f"Usuario não autenticado tentou remover um item"
             return log
         else:
             item = input("Qual item deseja remover? ")
-            if item in self.__estoque:             
+            if item in self.__estoque:        
                 del self.__estoque[item]
                 print("Item removido!")
                 log = f"Item {item} removido por {usuario.nome}"
