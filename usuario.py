@@ -19,7 +19,7 @@ class Usuario:
     def alterar_senha(self, usuario):
         if usuario == None: 
             print("você não está conectado!")
-            log = f"Usuario não autenticado tentou se desconectar."
+            log = f"Usuario não autenticado tentou modificar senha."
             return log
         else:
             senha_atual = input("Para definir uma nova senha, digite sua senha atual: ")
