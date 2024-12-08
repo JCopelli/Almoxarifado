@@ -1,6 +1,7 @@
 import Almoxarifado
 import pickle
 import Usuario
+import Item
 import pwinput
 import datetime
 import os
@@ -34,9 +35,7 @@ def ler_dados(caminho):
     except Exception as e:
         print(f"Erro ao ler o banco de dados: {e}")
 
-def cadastro_usuario(usuarios):
-    nome = input("Digite o nome do novo usuario: ")
-    senha = pwinput.pwinput(prompt = "Digite a senha do novo usuario: ", mask = "*")
+def cadastro_usuario(usuarios, nome, senha):
     usuarios[nome] = Usuario.Usuario(nome, senha)
     salvar_alteracoes(usuarios, usuarios_path)
     log = f"Usuario {nome} criado"
@@ -85,10 +84,15 @@ def main():
                 continuar_acao()
 
         elif opcao == 2:
-            pass
+            log = usuario_atual.alterar_senha(usuario_atual)
+            registrar_log(log)
+            salvar_alteracoes(usuarios, usuarios_path)
             
         elif opcao == 3:
-            pass
+            nome = input("Digite o nome do novo usuario: ")
+            senha = pwinput.pwinput(prompt = "Digite a senha do novo usuario: ", mask = "*")
+            log = cadastro_usuario(usuarios, nome, senha)
+            registrar_log(log)
 
         elif opcao == 4:
             os.system("cls")
@@ -143,7 +147,9 @@ def main():
             continuar_acao()
 
         elif opcao == 9:
-            pass
+            log = usuario_atual.logout(usuario_atual)
+            registrar_log(log)
+            salvar_alteracoes(usuarios, usuarios_path)
 
         else:
             os.system("cls")
