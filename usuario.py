@@ -48,3 +48,8 @@ class Usuario:
         print(self.__nome)
         print(self.__senha)
         print(self.__autenticado)
+
+    def mostrar_informacoes(self):
+        print(self.__nome)
+        print(self.__senha)
+        print(self.__autenticado)
