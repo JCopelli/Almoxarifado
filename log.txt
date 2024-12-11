@@ -1,15 +1,6 @@
-Usuario não autenticado tentou adicionar um item às 2024-12-01 17:35:06.898548
-Usuario não autenticado tentou adicionar um item às 2024-12-01 17:36:40.346931
-Usuario não autenticado tentou adicionar um item às 2024-12-01 17:37:33.496803
-Item Lapiseira removido por Copelli às 2024-12-01 17:37:47.446877
-Usuario Lucas criado às 2024-12-07 10:20:12.603047
-Usuario Lucas criado às 2024-12-07 10:25:18.882940
-Usuario Lucas criado às 2024-12-07 10:28:03.754078
-O usuario Lucas alterou sua senha. às 2024-12-07 10:29:01.717558
-Usuario Lucas criado às 2024-12-07 10:29:42.144938
-O usuário Lucas foi desconectado. às 2024-12-07 10:31:05.522882
-O usuário Lucas foi desconectado. às 2024-12-07 10:31:54.846456
-O usuário Lucas foi desconectado. às 2024-12-07 10:34:50.722434
-Usuario Lucas criado às 2024-12-07 10:35:05.289023
-Usuario Lucas criado às 2024-12-07 10:35:22.020819
-O usuário Lucas foi desconectado. às 2024-12-07 10:35:39.508600
+Usuario Copelli criado às 2024-12-10 23:01
+None às 2024-12-10 23:01
+Item Caneta adicionado por Copelli às 2024-12-10 23:01
+Item Lápis adicionado por Copelli às 2024-12-10 23:01
+None às 2024-12-10 23:01
+Usuario não autenticado tentou adicionar um item às 2024-12-10 23:02

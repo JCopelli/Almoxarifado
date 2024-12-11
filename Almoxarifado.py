@@ -17,9 +17,9 @@ class Almoxarifado:
            return log
         else:
             nome = input("Nome: ")                          #e utiliza essas variáveis para criar um objeto Item antes de sair do escopo da função
-            estoque = float(input("Estoque: "))
+            estoque = float(input("Estoque: ").replace(',',"."))
             un_medida = str(input("Unidade de Medida: "))
-            preco_un = float(input("Preço Unitário: "))
+            preco_un = float(input("Preço Unitário: ").replace(',',"."))
             valor_estoque = estoque * preco_un
             self.__estoque[nome] = Item.Item(nome, estoque, un_medida, preco_un) #composição com Item aqui
             print(f"{nome} adicionado ao sistema!")

@@ -10,8 +10,8 @@ class Item:
         print(f"Produto: {self.__nome}")
         print(f"Quantidade em estoque: {self.__estoque}")
         print(f"Unidade de medida: {self.__un_medida}")
-        print(f"Valor unitário: {self.__preco_un} $ por {self.__un_medida}")
-        print(f"Valor em estoque: {self.__valor_estoque}\n")
+        print(f"Valor unitário: R$ {self.__preco_un:.2f} por {self.__un_medida}")
+        print(f"Valor em estoque: R$ {self.__valor_estoque:.2f}\n")
 
     def entrada_de_estoque(self, usuario):
         if usuario == None:
@@ -41,11 +41,15 @@ class Item:
             return log
 
     @property
-    def alterar_valor(self):
+    def valor_estoque(self):
+        return self.__valor_estoque
+
+    @property
+    def altera_preco(self):
         return self.__preco_un
 
-    @alterar_valor.setter
-    def alterar_valor(self, valor):
+    @altera_preco.setter
+    def alterar_preco(self, valor):
         if valor < 0:
             print("O valor do produto não pode ser negativo")
         else:
