@@ -4,3 +4,11 @@ Item Caneta adicionado por Copelli às 2024-12-10 23:01
 Item Lápis adicionado por Copelli às 2024-12-10 23:01
 None às 2024-12-10 23:01
 Usuario não autenticado tentou adicionar um item às 2024-12-10 23:02
+Usuario Lucas criado às 2024-12-13 17:23
+None às 2024-12-13 17:23
+O item Caneta foi incrementado em 1 UN pelo usuario Lucas às 2024-12-13 17:24
+O item Lápis foi retirado em 1 UN pelo usuario Lucas às 2024-12-13 17:25
+Item Borracha adicionado por Lucas às 2024-12-13 17:25
+None às 2024-12-13 17:26
+Item Borracha removido por Lucas às 2024-12-13 17:26
+O usuário Lucas foi desconectado. às 2024-12-13 17:26

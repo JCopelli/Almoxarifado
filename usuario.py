@@ -10,8 +10,7 @@ class Usuario:
             senha = pwinput.pwinput(prompt = "Senha: ", mask = "*")
             if senha == self.__senha:
                 self.__autenticado = True
-                log = print(f"Usuário {self.__nome} conectado com sucesso!")
-                return log
+                print(f"Usuário {self.__nome} conectado com sucesso!")
             else:
                 print("Senha incorreta.Tente Novamente!")
                 return self.__autenticado
@@ -20,7 +19,7 @@ class Usuario:
     def alterar_senha(self, usuario):
         if usuario == None: 
             print("você não está conectado!")
-            log = "Usuario não autenticado tentou modificar senha."
+            log = f"Usuario não autenticado tentou se desconectar."
             return log
         else:
             senha_atual = input("Para definir uma nova senha, digite sua senha atual: ")
@@ -46,10 +45,17 @@ class Usuario:
 
         #Desconecta o usuário
     def logout(self, usuario):
+        if usuario == None:
+            print("você não está conectado!")
+            log = f"Usuario não autenticado tentou se desconectar."
+            return log
+        else:
             self.__autenticado = False
-            log = print(f"O usuário {usuario.nome} foi desconectado")
+            print(f"o usuário {usuario.nome} foi desconectado")
+            log = f"O usuário {usuario.nome} foi desconectado."
             return log
             
+
     @property
     def autenticado(self):
         return self.__autenticado
