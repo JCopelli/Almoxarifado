@@ -6,13 +6,10 @@ class Usuario:
         self.__senha = senha
         self.__autenticado = False
     
-    def login(self):
-            senha = pwinput.pwinput(prompt = "Senha: ", mask = "*")
+    def login(self, senha):
             if senha == self.__senha:
                 self.__autenticado = True
-                print(f"Usuário {self.__nome} conectado com sucesso!")
             else:
-                print("Senha incorreta.Tente Novamente!")
                 return self.__autenticado
         
         #Função para mudar senha. 
