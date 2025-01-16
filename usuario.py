@@ -10,35 +10,13 @@ class Usuario:
             if senha == self.__senha:
                 self.__autenticado = True
             else:
-                return self.__autenticado
+                return False
         
         #Função para mudar senha. 
-    def alterar_senha(self, usuario):
-        if usuario == None: 
-            print("você não está conectado!")
-            log = f"Usuario não autenticado tentou se desconectar."
-            return log
-        else:
-            senha_atual = input("Para definir uma nova senha, digite sua senha atual: ")
-            if senha_atual == self.__senha:
-                nova_senha = input("Digite a nova senha: ")
-                confirma_senha = input("Confirme a nova senha: ")  #Testa se a senha está correta
-                if nova_senha != confirma_senha:
-                    while(nova_senha != confirma_senha):    #Repete a condição até que as senhas sejam iguais
-                        print("As senhas digitadas não são iguais, tente novamente.")
-                        nova_senha = input("Digite a nova senha: ")
-                        confirma_senha = input("Confirme a nova senha: ")
-                    self.__senha = nova_senha
-                    print("Senha alterada com sucesso!")
-                    log = f"O usuario {usuario.nome} alterou sua senha."
-                    return log
-                else:
-                    self.__senha = nova_senha
-                    print("Senha alterada com sucesso!")
-                    log = f"O usuario {usuario.nome} alterou sua senha."
-                    return log
-            else:
-                print("A senha está incorreta!")
+    def alterar_senha(self, nova_senha):
+                self.__senha = nova_senha
+                log = f"O usuario {self.__nome} alterou sua senha."
+                return log
 
         #Desconecta o usuário
     def logout(self, usuario):

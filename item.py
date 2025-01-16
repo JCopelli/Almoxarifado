@@ -13,27 +13,15 @@ class Item:
         print(f"Valor unitário: R$ {self.__preco_un:.2f} por {self.__un_medida}")
         print(f"Valor em estoque: R$ {self.__valor_estoque:.2f}\n")
 
-    def entrada_de_estoque(self, usuario):
-        if usuario == None:
-            print("O usuário não foi autenticado. Efetue o login para ter acesso a essa função!")
-            log = f"Usuario não autenticado tentou incrementar um item."
-            return log
-
-        quantidade = input("Digite a quantidade que deseja incrementar: ")
+    def entrada_de_estoque(self, usuario, quantidade):
         self.__estoque = self.__estoque + float(quantidade)
         self.atualizar_estoque()
         log = f"O item {self.__nome} foi incrementado em {quantidade} {self.__un_medida} pelo usuario {usuario.nome}"
         return log
 
-    def saida_de_estoque(self, usuario):
-        if usuario == None:
-            print("O usuário não foi autenticado. Efetue o login para ter acesso a essa função!")
-            log = f"Usuario não autenticado tentou retirar um item."
-            return log
-
-        quantidade = input("Digite a quantidade que deseja retirar: ")
+    def saida_de_estoque(self, usuario, quantidade):
         if float(quantidade) > self.__estoque:
-            print("Não é possível retirar a quantidade desejada, pois não há disponível em estoque")
+           return False
         else:
             self.__estoque -= float(quantidade)
             self.atualizar_estoque()

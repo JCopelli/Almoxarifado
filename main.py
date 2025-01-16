@@ -88,8 +88,10 @@ def main():
     #     #os.system("cls") #limpa o ternminal
     #     print("---------Menu---------")
     #     print("\n-> (1) Login") 
-    #     print("-> (2) Alterar senha") #Requer Autenticação
-    #     print("-> (3) Cadastrar Usuario\n")
+    #      #Requer Autenticação
+     #     print("-> (3) Cadastrar Usuario\n")
+    #      print("-> (2) Alterar senha")
+   
     #     print("-> (4) Consultar Estoque") 
     #     print("-> (5) Entrada no estoque")#Requer Autenticação
     #     print("-> (6) Saída do estoque")#Requer Autenticação
@@ -103,6 +105,7 @@ def main():
         # if opcao == 1:
     def logar():
         
+        global usuario_atual
         usuario = campo_usuario.get()
         if usuario not in usuarios:
             label_msg_login.configure(text="Usuário não cadastrado!", text_color="red" )
@@ -115,6 +118,79 @@ def main():
                 label_msg_login.configure(text=f"Bem-vindo, {usuario}", text_color="green")
                 registrar_log(f"Usuário {usuario} conectado")
                 usuario_atual = usuarios[usuario]
+                janela.iconify()
+                abrir_menu_principal()
+
+                 # elif opcao == 5:
+        #     item_entrada = input ("Digite o item que deseja incrementar: ")
+        #     if item_entrada in almoxarifado1.estoque:
+        #         log = almoxarifado1.estoque[item_entrada].entrada_de_estoque(usuario_atual)
+        #         registrar_log(log)
+        #         salvar_alteracoes(almoxarifado1, almoxarifado_path)
+        #         continuar_acao()
+        #     else:
+        #         print("\nEsse item não existe no estoque!")
+        #         continuar_acao()
+
+
+    def abrir_janela_entrada():
+        janela_entrada= ctk.CTkToplevel(janela)
+        janela_entrada.title("Sistema de Almoxarifado - Entrada no Estoque")
+        janela_entrada.geometry("400x400")
+        janela_entrada.resizable(width=False, height=False)
+        janela_entrada.after(50,janela_entrada.deiconify)
+        janela_entrada.focus_force()
+
+        # Configurar o layout da janela
+        janela_entrada.grid_columnconfigure(0, weight=1)
+        janela_entrada.grid_rowconfigure(1, weight=1)
+
+        # Header
+        header = ctk.CTkLabel(janela_entrada, text="Entrada no Estoque", font=("Arial", 24, "bold"))
+        header.grid(row=0, column=0, pady=20, padx=10)
+
+        # Frame central para alinhar os elementos
+        frame_central = ctk.CTkFrame(janela_entrada)
+        frame_central.grid(row=1, column=0, pady=20, padx=10, sticky="n")
+
+        # Label Nome do item
+        label_nome = ctk.CTkLabel(frame_central, text="Nome do Item", font=("Arial", 16))
+        label_nome.grid(row=0, column=0, pady=5)
+
+        # Campo de Nome do item
+        campo_nome = ctk.CTkEntry(frame_central, placeholder_text="Digite o nome do item a dar entrada", width=300)
+        campo_nome.grid(row=1, column=0, padx=8)
+        
+
+        # Label quantidade
+        label_quantidade = ctk.CTkLabel(frame_central, text="Quantidade", font=("Arial", 16))
+        label_quantidade.grid(row=2, column=0, pady=5)
+
+        # Campo quantidade
+        campo_quantidade = ctk.CTkEntry(frame_central, placeholder_text="Digite a quantidade a ser incrementada", width=300)
+        campo_quantidade.grid(row=3, column=0, padx=8)
+
+        def entrada():
+            global usuario_atual
+            nome = campo_nome.get()
+            quantidade = campo_quantidade.get()
+            if nome in almoxarifado1.estoque:
+                log = almoxarifado1.estoque[nome].entrada_de_estoque(usuario_atual, quantidade)
+                registrar_log(log)
+                salvar_alteracoes(almoxarifado1, almoxarifado_path)
+                label_msg_entrada.configure(text=f"Item {nome} incrementado em {quantidade}", text_color='green')
+                janela_entrada.after(700, janela_entrada.destroy)
+            else:
+                label_msg_entrada.configure(text=f"Item {nome} não existe!", text_color="red")
+
+        # botão criar usuário
+        botao_entrada = ctk.CTkButton(frame_central, text="Incrementar Estoque", command=entrada)
+        botao_entrada.grid(row=4, column=0, pady=15)
+
+        label_msg_entrada = ctk.CTkLabel(frame_central, text="")
+        label_msg_entrada.grid(row=5, column=0)
+
+
 
         # elif opcao == 2:
         #     if usuario_atual == None: 
@@ -145,18 +221,7 @@ def main():
         #         print(f"-----------Valor Total em Estoque------------- \nR$ {total:.2f}\n")
         #     continuar_acao()
             
-        # elif opcao == 5:
-        #     os.system("cls")
-        #     print("---------Entrada de estoque---------\n")
-        #     item_entrada = input ("Digite o item que deseja incrementar: ")
-        #     if item_entrada in almoxarifado1.estoque:
-        #         log = almoxarifado1.estoque[item_entrada].entrada_de_estoque(usuario_atual)
-        #         registrar_log(log)
-        #         salvar_alteracoes(almoxarifado1, almoxarifado_path)
-        #         continuar_acao()
-        #     else:
-        #         print("\nEsse item não existe no estoque!")
-        #         continuar_acao()
+       
 
 
         # elif opcao == 6:
@@ -204,6 +269,66 @@ def main():
         #     os.system("cls")
         #     exit()
     
+    def abrir_janela_saida():
+        janela_saida= ctk.CTkToplevel(janela)
+        janela_saida.title("Sistema de Almoxarifado - Entrada no Estoque")
+        janela_saida.geometry("400x400")
+        janela_saida.resizable(width=False, height=False)
+        janela_saida.after(50,janela_saida.deiconify)
+        janela_saida.focus_force()
+
+        # Configurar o layout da janela
+        janela_saida.grid_columnconfigure(0, weight=1)
+        janela_saida.grid_rowconfigure(1, weight=1)
+
+        # Header
+        header = ctk.CTkLabel(janela_saida, text="Entrada no Estoque", font=("Arial", 24, "bold"))
+        header.grid(row=0, column=0, pady=20, padx=10)
+
+        # Frame central para alinhar os elementos
+        frame_central = ctk.CTkFrame(janela_saida)
+        frame_central.grid(row=1, column=0, pady=20, padx=10, sticky="n")
+
+        # Label Nome do item
+        label_nome = ctk.CTkLabel(frame_central, text="Nome do Item", font=("Arial", 16))
+        label_nome.grid(row=0, column=0, pady=5)
+
+        # Campo de Nome do item
+        campo_nome = ctk.CTkEntry(frame_central, placeholder_text="Digite o nome do item a dar saída", width=300)
+        campo_nome.grid(row=1, column=0, padx=8)
+        
+
+        # Label quantidade
+        label_quantidade = ctk.CTkLabel(frame_central, text="Quantidade", font=("Arial", 16))
+        label_quantidade.grid(row=2, column=0, pady=5)
+
+        # Campo quantidade
+        campo_quantidade = ctk.CTkEntry(frame_central, placeholder_text="Digite a quantidade a ser retirada", width=300)
+        campo_quantidade.grid(row=3, column=0, padx=8)
+
+        def saida():
+            global usuario_atual
+            nome = campo_nome.get()
+            quantidade = campo_quantidade.get()
+            if nome in almoxarifado1.estoque:
+                log = almoxarifado1.estoque[nome].saida_de_estoque(usuario_atual, quantidade)
+                if log == False:
+                    label_msg_entrada.configure(text='Quantidade indisponível', text_color="red",)
+                else:
+                    registrar_log(log)
+                    salvar_alteracoes(almoxarifado1, almoxarifado_path)
+                    label_msg_entrada.configure(text=f"Item {nome} retirado em {quantidade}", text_color='green')
+                    janela_saida.after(700, janela_saida.destroy)
+            else:
+                label_msg_entrada.configure(text=f"Item {nome} não existe no estoque!", text_color="red")
+
+        # botão criar usuário
+        botao_entrada = ctk.CTkButton(frame_central, text="Retirar do Estoque", command=saida)
+        botao_entrada.grid(row=4, column=0, pady=15)
+
+        label_msg_entrada = ctk.CTkLabel(frame_central, text="")
+        label_msg_entrada.grid(row=5, column=0)
+
     def abrir_tela_criar_usuario():
         # Criar nova janela para "Criar Usuário"
         janela_criar_usuario = ctk.CTkToplevel(janela)
@@ -255,14 +380,124 @@ def main():
         botao_criar_usuario = ctk.CTkButton(frame_central, text="Criar Usuário", command=criar_usuario)
         botao_criar_usuario.grid(row=4, column=0, pady=15)
 
-        label_msg_criar_usuario = ctk.CTkLabel(frame_central, text="")
+        label_msg_criar_usuario = ctk.CTkLabel(frame_central, text="", font=("bold"))
         label_msg_criar_usuario.grid(row=5, column=0)
- 
+  
+    def abrir_tela_alterar_senha():
+
+        global usuario_atual
+        # Criando a janela principal
+        app2 = ctk.CTkToplevel(janela)
+        app2.title("Tela de Alterar Senha")
+        app2.geometry("400x400")
+        app2.resizable(width=False, height=False)
+        app2.after(50, app2.deiconify)
+        app2.focus_force()
+
+        # Criando frame para centralizar os widgets
+        frame_central = ctk.CTkFrame(app2)
+        frame_central.grid(row=0, column=0, sticky="nsew")
+
+        # Configurando a grid
+        frame_central.grid_rowconfigure(0, weight=1)
+        frame_central.grid_rowconfigure(1, weight=1)
+        frame_central.grid_rowconfigure(2, weight=1)
+        frame_central.grid_rowconfigure(3, weight=1)
+        frame_central.grid_rowconfigure(4, weight=1)
+        frame_central.grid_columnconfigure(0, weight=1)
+        # Criando widgets
+        label_senha = ctk.CTkLabel(frame_central, text="Senha Atual:")
+        label_senha.grid(row=0, column=1, pady=5)
+
+        entry_senha = ctk.CTkEntry(frame_central, show="*")  # `show="*"` oculta a senha digitada
+        entry_senha.grid(row=1, column=1, pady=5)
+
+        label_senha_nova = ctk.CTkLabel(frame_central, text="Nova Senha:")
+        label_senha_nova.grid(row=2, column=1, pady=5)
+
+        entry_senha_nova = ctk.CTkEntry(frame_central, show="*")  # `show="*"` oculta a senha digitada
+        entry_senha_nova.grid(row=3, column=1, pady=5)
+
+        label_senha_nova_confirma = ctk.CTkLabel(frame_central, text="Confirmar Nova Senha:")
+        label_senha_nova_confirma.grid(row=4, column=1, pady=5)
+
+        entry_senha_nova_confirma = ctk.CTkEntry(frame_central, show="*")  # `show="*"` oculta a senha digitada
+        entry_senha_nova_confirma.grid(row=5, column=1, pady=5)
+
+        label_msg_mod_senha = ctk.CTkLabel(frame_central, text="")
+        label_msg_mod_senha.grid(row=6, column=1, pady=10, padx=10)
+
+        def alterar_senha_main():
+            print("Aqui")
+            senha = entry_senha.get()
+            senha_nova = entry_senha_nova.get()
+            senha_nova_confirma = entry_senha_nova_confirma.get()
+
+            if senha_nova != senha_nova_confirma:
+                label_msg_mod_senha.configure(text="Confirmação inválida, tente novamente!", text_color="red")
+            else:
+                if senha == usuario_atual.senha:
+                    print("2")
+                    log = usuario_atual.alterar_senha(senha_nova)
+                    registrar_log(log)
+                    salvar_alteracoes(usuarios, usuarios_path)
+                    label_msg_mod_senha.configure(text="Senha alterada com sucesso!", text_color="green")
+                    label_msg_mod_senha.after(700, app2.destroy)
+                else:
+                    print(usuario_atual.senha)
+                    label_msg_mod_senha.configure(text="Senha Incorreta", text_color="red")
+
+        # Botão de alterar senha
+        btn_login = ctk.CTkButton(frame_central, text="Alterar senha", command=alterar_senha_main)
+        btn_login.grid(row=7, column=1, pady=20)
+
+    def abrir_menu_principal():
+    # Criar nova janela para o menu principal
+        janela_menu = ctk.CTkToplevel()
+        janela_menu.title("Menu Principal")
+        janela_menu.geometry("500x500")
+        janela_menu.state("zoomed")
+
+        # Configurar o layout da janela
+        janela_menu.grid_columnconfigure(0, weight=1)
+
+        # Header
+        header = ctk.CTkLabel(janela_menu, text="Menu Principal", font=("Arial", 24, "bold"))
+        header.grid(row=0, column=0, pady=130)
+
+        # Frame central para alinhar os botões
+        frame_menu = ctk.CTkFrame(janela_menu)
+        frame_menu.grid(row=1, column=0, pady=30, padx=20)
+
+        # Botões de opções do menu
+        botoes_menu = [
+            ("Consultar Estoque", lambda: print("Consultar Estoque selecionado")),
+            ("Entrada no Estoque", abrir_janela_entrada),
+            ("Saída do Estoque", abrir_janela_saida),
+            ("Cadastrar Item", lambda: print("Cadastrar Item selecionado")),
+            ("Remover Item", lambda: print("Remover Item selecionado")),
+            ("Mudar senha", abrir_tela_alterar_senha),
+            ("Logout", lambda: print("Logout selecionado"))           
+        ]
+
+        for i, (texto, comando) in enumerate(botoes_menu):
+            botao = ctk.CTkButton(
+                frame_menu,
+                text=texto,
+                command=comando,
+                font=("Arial", 16, "bold"),
+                width=250,
+                height=40
+            )
+            botao.grid(row=i, column=0, pady=5, padx=10)
+
+
     ctk.set_appearance_mode("Dark")  # Pode ser "Dark" ou "Light"
     ctk.set_default_color_theme("blue")
     # Criar a janela principal
     janela = ctk.CTk()
     janela.title("Sistema de Almoxarifado - Login")
+    janela.state("zoomed")
 
     # Configurar o layout da janela
     janela.grid_columnconfigure(0, weight=1)
