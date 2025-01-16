@@ -387,69 +387,165 @@ def main():
 
         global usuario_atual
         # Criando a janela principal
-        app2 = ctk.CTkToplevel(janela)
-        app2.title("Tela de Alterar Senha")
-        app2.geometry("400x400")
-        app2.resizable(width=False, height=False)
-        app2.after(50, app2.deiconify)
-        app2.focus_force()
+        janela_alterar_senha = ctk.CTkToplevel(janela)
+        janela_alterar_senha.title("Tela de Alterar Senha")
+        janela_alterar_senha.geometry("400x400")
+        janela_alterar_senha.resizable(width=False, height=False)
+        janela_alterar_senha.after(50, janela_alterar_senha.deiconify)
+        janela_alterar_senha.focus_force()
 
-        # Criando frame para centralizar os widgets
-        frame_central = ctk.CTkFrame(app2)
-        frame_central.grid(row=0, column=0, sticky="nsew")
+        # Configurar o layout da janela
+        janela_alterar_senha.grid_columnconfigure(0, weight=1)
+        janela_alterar_senha.grid_rowconfigure(1, weight=1)
 
-        # Configurando a grid
-        frame_central.grid_rowconfigure(0, weight=1)
-        frame_central.grid_rowconfigure(1, weight=1)
-        frame_central.grid_rowconfigure(2, weight=1)
-        frame_central.grid_rowconfigure(3, weight=1)
-        frame_central.grid_rowconfigure(4, weight=1)
-        frame_central.grid_columnconfigure(0, weight=1)
-        # Criando widgets
-        label_senha = ctk.CTkLabel(frame_central, text="Senha Atual:")
-        label_senha.grid(row=0, column=1, pady=5)
+        # Header
+        header = ctk.CTkLabel(janela_alterar_senha, text="Alterar a Senha", font=("Arial", 24, "bold"))
+        header.grid(row=0, column=0, pady=20, padx=10)
 
-        entry_senha = ctk.CTkEntry(frame_central, show="*")  # `show="*"` oculta a senha digitada
-        entry_senha.grid(row=1, column=1, pady=5)
+        # Frame central para alinhar os elementos
+        frame_central = ctk.CTkFrame(janela_alterar_senha)
+        frame_central.grid(row=1, column=0, pady=20, padx=10, sticky="n")
 
-        label_senha_nova = ctk.CTkLabel(frame_central, text="Nova Senha:")
-        label_senha_nova.grid(row=2, column=1, pady=5)
+        # Label Senha
+        label_senha = ctk.CTkLabel(frame_central, text="Senha", font=("Arial", 16))
+        label_senha.grid(row=0, column=0, pady=5)
 
-        entry_senha_nova = ctk.CTkEntry(frame_central, show="*")  # `show="*"` oculta a senha digitada
-        entry_senha_nova.grid(row=3, column=1, pady=5)
+        # Campo de Senha
+        campo_senha = ctk.CTkEntry(frame_central, placeholder_text="Digite a senha atual", width=300)
+        campo_senha.grid(row=1, column=0, padx=8)
+        
 
-        label_senha_nova_confirma = ctk.CTkLabel(frame_central, text="Confirmar Nova Senha:")
-        label_senha_nova_confirma.grid(row=4, column=1, pady=5)
+        # Label Senha nova
+        label_senha_nova = ctk.CTkLabel(frame_central, text="Senha nova", font=("Arial", 16))
+        label_senha_nova.grid(row=2, column=0, pady=5)
 
-        entry_senha_nova_confirma = ctk.CTkEntry(frame_central, show="*")  # `show="*"` oculta a senha digitada
-        entry_senha_nova_confirma.grid(row=5, column=1, pady=5)
+        # Campo de Senha nova
+        campo_senha_nova = ctk.CTkEntry(frame_central, placeholder_text="Digite a senha nova", width=300)
+        campo_senha_nova.grid(row=3, column=0, padx=8)
+
+        # Label Senha nova confirma
+        label_senha_nova_confirma = ctk.CTkLabel(frame_central, text="Senha nova", font=("Arial", 16))
+        label_senha_nova_confirma.grid(row=4, column=0, pady=5)
+
+        # Campo de Senha nova senha nova confirma
+        campo_senha_nova_confirma = ctk.CTkEntry(frame_central, placeholder_text="Confirme a senha nova", width=300)
+        campo_senha_nova_confirma.grid(row=5, column=0, padx=8)
+
+
+        # # Mensagem no final da página
+        # label_alterar_senha = ctk.CTkLabel(frame_central, text="")
+        # label_alterar_senha.grid(row=7, column=0)
 
         label_msg_mod_senha = ctk.CTkLabel(frame_central, text="")
-        label_msg_mod_senha.grid(row=6, column=1, pady=10, padx=10)
+        label_msg_mod_senha.grid(row=7, column=0)
+
+        # Mensagem
+        label_msg_login = ctk.CTkLabel(frame_central, text="")
+        label_msg_login.grid(row=5, column=0)
+
 
         def alterar_senha_main():
-            print("Aqui")
-            senha = entry_senha.get()
-            senha_nova = entry_senha_nova.get()
-            senha_nova_confirma = entry_senha_nova_confirma.get()
+            # print("Aqui")
+            senha = campo_senha.get()
+            senha_nova = campo_senha_nova.get()
+            senha_nova_confirma = campo_senha_nova_confirma.get()
 
             if senha_nova != senha_nova_confirma:
-                label_msg_mod_senha.configure(text="Confirmação inválida, tente novamente!", text_color="red")
+                label_msg_mod_senha.configure(text="As senhas não são iguais! Tente novamente.", text_color="red")
             else:
                 if senha == usuario_atual.senha:
-                    print("2")
+                    # print("2")
                     log = usuario_atual.alterar_senha(senha_nova)
                     registrar_log(log)
                     salvar_alteracoes(usuarios, usuarios_path)
                     label_msg_mod_senha.configure(text="Senha alterada com sucesso!", text_color="green")
-                    label_msg_mod_senha.after(700, app2.destroy)
+                    label_msg_mod_senha.after(700, janela_alterar_senha.destroy)
                 else:
-                    print(usuario_atual.senha)
+                    # print(usuario_atual.senha)
                     label_msg_mod_senha.configure(text="Senha Incorreta", text_color="red")
 
-        # Botão de alterar senha
-        btn_login = ctk.CTkButton(frame_central, text="Alterar senha", command=alterar_senha_main)
-        btn_login.grid(row=7, column=1, pady=20)
+
+        # botão alterar senha
+        botao_alterar_senha = ctk.CTkButton(frame_central, text="Alterar Senha", command=alterar_senha_main)
+        botao_alterar_senha.grid(row=6, column=0, pady=15)
+
+
+        # # Configurar o layout da janela
+        # app2.grid_columnconfigure(0, weight=1)
+        # app2.grid_rowconfigure(1, weight=1)
+        # app2a.grid_rowconfigure(2, weight=1)
+
+        # # Header
+        # header = ctk.CTkLabel(app2, text="Bem-vindo ao Sistema de Almoxarifado", font=("Arial", 24, "bold"))
+        # header.grid(row=0, column=0, pady=110, padx=10)
+
+        # # Frame central para alinhar os elementos
+        # frame_central = ctk.CTkFrame(janela)
+        # frame_central.grid(row=1, column=0, padx=40, pady=30, sticky="n")
+
+
+
+        # # Criando frame para centralizar os widgets
+        # frame_central = ctk.CTkFrame(app2)
+        # frame_central.grid(row=0, column=0, sticky="nsew")
+
+
+
+        # # Configurando a grid
+        # frame_central.grid_rowconfigure(0, weight=1)
+        # frame_central.grid_rowconfigure(1, weight=1)
+        # frame_central.grid_rowconfigure(2, weight=1)
+        # frame_central.grid_rowconfigure(3, weight=1)
+        # frame_central.grid_rowconfigure(4, weight=1)
+        # frame_central.grid_columnconfigure(0, weight=1)
+
+        # # Criando widgets
+        # label_senha = ctk.CTkLabel(frame_central, text="Senha Atual:")
+        # label_senha.grid(row=0, column=1, pady=5)
+
+        # entry_senha = ctk.CTkEntry(frame_central, show="*")  # `show="*"` oculta a senha digitada
+        # entry_senha.grid(row=1, column=1, pady=5)
+
+        # label_senha_nova = ctk.CTkLabel(frame_central, text="Nova Senha:")
+        # label_senha_nova.grid(row=2, column=1, pady=5)
+
+
+
+        # entry_senha_nova = ctk.CTkEntry(frame_central, show="*")  # `show="*"` oculta a senha digitada
+        # entry_senha_nova.grid(row=3, column=1, pady=5)
+
+        # label_senha_nova_confirma = ctk.CTkLabel(frame_central, text="Confirmar Nova Senha:")
+        # label_senha_nova_confirma.grid(row=4, column=1, pady=5)
+
+        # entry_senha_nova_confirma = ctk.CTkEntry(frame_central, show="*")  # `show="*"` oculta a senha digitada
+        # entry_senha_nova_confirma.grid(row=5, column=1, pady=5)
+
+        # label_msg_mod_senha = ctk.CTkLabel(frame_central, text="")
+        # label_msg_mod_senha.grid(row=6, column=1, pady=10, padx=10)
+
+        # def alterar_senha_main():
+        #     print("Aqui")
+        #     senha = entry_senha.get()
+        #     senha_nova = entry_senha_nova.get()
+        #     senha_nova_confirma = entry_senha_nova_confirma.get()
+
+        #     if senha_nova != senha_nova_confirma:
+        #         label_msg_mod_senha.configure(text="Confirmação inválida, tente novamente!", text_color="red")
+        #     else:
+        #         if senha == usuario_atual.senha:
+        #             print("2")
+        #             log = usuario_atual.alterar_senha(senha_nova)
+        #             registrar_log(log)
+        #             salvar_alteracoes(usuarios, usuarios_path)
+        #             label_msg_mod_senha.configure(text="Senha alterada com sucesso!", text_color="green")
+        #             label_msg_mod_senha.after(700, app2.destroy)
+        #         else:
+        #             print(usuario_atual.senha)
+        #             label_msg_mod_senha.configure(text="Senha Incorreta", text_color="red")
+
+        # # Botão de alterar senha
+        # btn_login = ctk.CTkButton(frame_central, text="Alterar senha", command=alterar_senha_main)
+        # btn_login.grid(row=7, column=1, pady=20)
 
     def abrir_menu_principal():
     # Criar nova janela para o menu principal
