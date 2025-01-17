@@ -1,14 +1,256 @@
-Usuario Copelli criado às 2024-12-10 23:01
-None às 2024-12-10 23:01
-Item Caneta adicionado por Copelli às 2024-12-10 23:01
-Item Lápis adicionado por Copelli às 2024-12-10 23:01
-None às 2024-12-10 23:01
-Usuario não autenticado tentou adicionar um item às 2024-12-10 23:02
-Usuario Lucas criado às 2024-12-13 17:23
-None às 2024-12-13 17:23
-O item Caneta foi incrementado em 1 UN pelo usuario Lucas às 2024-12-13 17:24
-O item Lápis foi retirado em 1 UN pelo usuario Lucas às 2024-12-13 17:25
-Item Borracha adicionado por Lucas às 2024-12-13 17:25
-None às 2024-12-13 17:26
-Item Borracha removido por Lucas às 2024-12-13 17:26
-O usuário Lucas foi desconectado. às 2024-12-13 17:26
+Usuario Copelli criado ï¿½s 2024-12-10 23:01
+None ï¿½s 2024-12-10 23:01
+Item Caneta adicionado por Copelli ï¿½s 2024-12-10 23:01
+Item Lï¿½pis adicionado por Copelli ï¿½s 2024-12-10 23:01
+None ï¿½s 2024-12-10 23:01
+Usuario nï¿½o autenticado tentou adicionar um item ï¿½s 2024-12-10 23:02
+Usuario Lucas criado ï¿½s 2024-12-13 17:23
+None ï¿½s 2024-12-13 17:23
+O item Caneta foi incrementado em 1 UN pelo usuario Lucas ï¿½s 2024-12-13 17:24
+O item Lï¿½pis foi retirado em 1 UN pelo usuario Lucas ï¿½s 2024-12-13 17:25
+Item Borracha adicionado por Lucas ï¿½s 2024-12-13 17:25
+None ï¿½s 2024-12-13 17:26
+Item Borracha removido por Lucas ï¿½s 2024-12-13 17:26
+O usuï¿½rio Lucas foi desconectado. ï¿½s 2024-12-13 17:26
+Usuï¿½rio Copelli conectado ï¿½s 2025-01-14 21:59
+Usuario Joï¿½o criado ï¿½s 2025-01-14 22:58
+Usuario Joï¿½o  criado ï¿½s 2025-01-14 23:02
+Usuario Joï¿½o criado ï¿½s 2025-01-14 23:04
+Usuï¿½rio Joï¿½o conectado ï¿½s 2025-01-14 23:05
+Usuï¿½rio Joï¿½o conectado ï¿½s 2025-01-14 23:20
+Usuario Copelli criado ï¿½s 2025-01-14 23:21
+Usuario Copelli criado ï¿½s 2025-01-14 23:21
+Usuï¿½rio Copelli conectado ï¿½s 2025-01-15 21:06
+
+Usuário Copelli conectado às 2025-01-15 22:00
+Usuário Copelli conectado às 2025-01-15 22:01
+Usuário Copelli conectado às 2025-01-15 22:04
+Usuário Copelli conectado às 2025-01-15 22:12
+O item Caneta foi incrementado em 10 UN pelo usuario Copelli às 2025-01-15 22:12
+O item Caneta foi incrementado em 10 UN pelo usuario Copelli às 2025-01-15 22:12
+Usuário Copelli conectado às 2025-01-15 22:13
+O item Caneta foi incrementado em 15 UN pelo usuario Copelli às 2025-01-15 22:13
+O item Caneta foi incrementado em 15 UN pelo usuario Copelli às 2025-01-15 22:13
+Usuário Copelli conectado às 2025-01-15 22:13
+O item Caneta foi incrementado em 10 UN pelo usuario Copelli às 2025-01-15 22:14
+Usuário Copelli conectado às 2025-01-15 22:14
+Usuário Copelli conectado às 2025-01-15 22:14
+Usuário Copelli conectado às 2025-01-15 22:31
+Usuário Copelli conectado às 2025-01-15 22:31
+O item Caneta foi retirado em 10 UN pelo usuario Copelli às 2025-01-15 22:31
+Usuário Copelli conectado às 2025-01-15 22:38
+O item Caneta foi retirado em 10 UN pelo usuario Copelli às 2025-01-15 22:39
+O item Lápis foi retirado em 10 UN pelo usuario Copelli às 2025-01-15 22:39
+Usuário Copelli conectado às 2025-01-15 22:47
+Usuário Copelli conectado às 2025-01-15 22:48
+Usuário Copelli conectado às 2025-01-15 22:52
+Usuário Copelli conectado às 2025-01-15 23:06
+Usuário Copelli conectado às 2025-01-15 23:08
+Usuário Copelli conectado às 2025-01-15 23:11
+Usuário Copelli conectado às 2025-01-15 23:12
+O usuario Copelli alterou sua senha. às 2025-01-15 23:12
+Usuário Copelli conectado às 2025-01-15 23:14
+Usuário Copelli conectado às 2025-01-15 23:17
+Usuário Copelli conectado às 2025-01-15 23:20
+Usuário Copelli conectado às 2025-01-15 23:29
+Usuário Copelli conectado às 2025-01-15 23:30
+Usuário Copelli conectado às 2025-01-15 23:33
+Usuário Copelli conectado às 2025-01-15 23:35
+Usuário Copelli conectado às 2025-01-15 23:35
+Usuário Copelli conectado às 2025-01-15 23:38
+Usuário Copelli conectado às 2025-01-15 23:38
+Usuário Copelli conectado às 2025-01-15 23:40
+Usuário Copelli conectado às 2025-01-15 23:40
+Usuário Copelli conectado às 2025-01-15 23:43
+Usuário Copelli conectado às 2025-01-15 23:44
+O usuario Copelli alterou sua senha. às 2025-01-15 23:44
+Usuário Copelli conectado às 2025-01-15 23:46
+Usuário Copelli conectado às 2025-01-15 23:46
+Usuário Copelli conectado às 2025-01-15 23:48
+Usuário Copelli conectado às 2025-01-15 23:49
+Usuário Copelli conectado às 2025-01-15 23:49
+Usuário Copelli conectado às 2025-01-15 23:50
+Usuário Copelli conectado às 2025-01-15 23:52
+Usuário Copelli conectado às 2025-01-15 23:54
+Usuário Copelli conectado às 2025-01-15 23:54
+Usuário Copelli conectado às 2025-01-15 23:55
+Usuário Copelli conectado às 2025-01-15 23:56
+Usuário Copelli conectado às 2025-01-15 23:56
+Usuário Copelli conectado às 2025-01-15 23:58
+Usuário Copelli conectado às 2025-01-15 23:59
+Usuário Copelli conectado às 2025-01-16 10:51
+Usuário Copelli conectado às 2025-01-16 10:58
+O item Lápis foi incrementado em 10 UN pelo usuario Copelli às 2025-01-16 10:58
+O item Lápis foi retirado em 10 UN pelo usuario Copelli às 2025-01-16 10:58
+Usuário Copelli conectado às 2025-01-16 11:20
+Usuário Copelli conectado às 2025-01-16 11:21
+Usuário Copelli conectado às 2025-01-16 11:22
+Usuário Copelli conectado às 2025-01-16 11:25
+O usuario Copelli alterou sua senha. às 2025-01-16 11:25
+Usuário Copelli conectado às 2025-01-16 11:28
+Usuário Copelli conectado às 2025-01-16 11:31
+O usuario Copelli alterou sua senha. às 2025-01-16 11:32
+Usuário Copelli conectado às 2025-01-16 11:34
+O usuario Copelli alterou sua senha. às 2025-01-16 11:35
+Usuário Copelli conectado às 2025-01-16 11:42
+O usuario Copelli alterou sua senha. às 2025-01-16 11:42
+O usuario Copelli alterou sua senha. às 2025-01-16 11:42
+O usuario Copelli alterou sua senha. às 2025-01-16 11:43
+Usuário Copelli conectado às 2025-01-16 11:44
+O usuario Copelli alterou sua senha. às 2025-01-16 11:45
+Usuário Copelli conectado às 2025-01-16 11:47
+O usuario Copelli alterou sua senha. às 2025-01-16 11:47
+Usuário Copelli conectado às 2025-01-16 17:19
+Usuário Copelli conectado às 2025-01-16 17:20
+O usuario Copelli alterou sua senha. às 2025-01-16 17:20
+Usuário Copelli conectado às 2025-01-16 17:21
+Usuário Copelli conectado às 2025-01-16 17:24
+Usuário Copelli conectado às 2025-01-16 17:27
+Usuário Copelli conectado às 2025-01-16 17:28
+Usuário Copelli conectado às 2025-01-16 17:29
+Usuário Copelli conectado às 2025-01-16 17:32
+Usuário Copelli conectado às 2025-01-16 17:34
+Usuário Copelli conectado às 2025-01-16 17:35
+Usuário Copelli conectado às 2025-01-16 17:36
+Usuário Copelli conectado às 2025-01-16 17:37
+Usuário Copelli conectado às 2025-01-16 17:39
+O item Lápis foi incrementado em 10 UN pelo usuario Copelli às 2025-01-16 17:39
+O item Lápis foi retirado em 5 UN pelo usuario Copelli às 2025-01-16 17:40
+Usuário Copelli conectado às 2025-01-16 17:42
+Usuário Copelli conectado às 2025-01-16 17:43
+Usuário Copelli conectado às 2025-01-16 17:56
+Usuário Copelli conectado às 2025-01-16 17:59
+Usuário Copelli conectado às 2025-01-16 17:59
+Usuário Copelli conectado às 2025-01-16 18:00
+Usuário Copelli conectado às 2025-01-16 18:01
+Usuário Copelli conectado às 2025-01-16 18:02
+Usuário Copelli conectado às 2025-01-16 18:03
+Usuário Copelli conectado às 2025-01-16 18:05
+Usuario não autenticado tentou adicionar um item às 2025-01-16 18:06
+Usuario não autenticado tentou adicionar um item às 2025-01-16 18:06
+Usuário Copelli conectado às 2025-01-16 18:08
+Usuário Copelli conectado às 2025-01-16 18:10
+Usuário Copelli conectado às 2025-01-16 18:13
+Usuário Copelli conectado às 2025-01-16 18:15
+Usuário Copelli conectado às 2025-01-16 19:33
+Usuário Copelli conectado às 2025-01-16 19:36
+Usuário Copelli conectado às 2025-01-16 19:44
+Item c adicionado por Copelli às 2025-01-16 19:44
+Item c adicionado por Copelli às 2025-01-16 19:44
+Usuário Copelli conectado às 2025-01-16 19:45
+Item d adicionado por Copelli às 2025-01-16 19:46
+Item d adicionado por Copelli às 2025-01-16 19:46
+Usuário Copelli conectado às 2025-01-16 19:46
+Item e adicionado por Copelli às 2025-01-16 19:46
+Item e adicionado por Copelli às 2025-01-16 19:46
+Usuário Copelli conectado às 2025-01-16 20:12
+Usuário Copelli conectado às 2025-01-16 20:29
+O usuario Copelli alterou sua senha. às 2025-01-16 20:29
+Item f adicionado por Copelli às 2025-01-16 20:30
+Item f adicionado por Copelli às 2025-01-16 20:30
+Usuário Copelli conectado às 2025-01-16 20:31
+O item Lápis foi incrementado em 10 UN pelo usuario Copelli às 2025-01-16 20:33
+O item Lápis foi retirado em 10 UN pelo usuario Copelli às 2025-01-16 20:33
+Item f adicionado por Copelli às 2025-01-16 20:34
+Item f adicionado por Copelli às 2025-01-16 20:34
+Usuário Copelli conectado às 2025-01-16 20:43
+Usuário Copelli conectado às 2025-01-16 20:45
+Usuário Copelli conectado às 2025-01-16 20:46
+Usuário Copelli conectado às 2025-01-16 20:47
+Usuário Copelli conectado às 2025-01-16 20:48
+Usuário Copelli conectado às 2025-01-16 20:53
+Usuário Copelli conectado às 2025-01-16 20:55
+Usuário Copelli conectado às 2025-01-16 20:56
+Item p criado por Copelli às 2025-01-16 20:56
+Item p criado por Copelli às 2025-01-16 20:56
+Usuário Copelli conectado às 2025-01-16 20:57
+Usuario t criado às 2025-01-16 21:08
+Usuário t conectado às 2025-01-16 21:08
+Usuário t conectado às 2025-01-16 21:08
+Usuário t conectado às 2025-01-16 21:09
+Usuário t conectado às 2025-01-16 21:09
+Usuário t conectado às 2025-01-16 21:11
+Usuário t conectado às 2025-01-16 21:13
+Item f removido por t às 2025-01-16 21:13
+Item f removido por t às 2025-01-16 21:13
+Usuário t conectado às 2025-01-16 21:14
+Usuário t conectado às 2025-01-16 21:15
+Usuário t conectado às 2025-01-16 21:21
+Usuário t conectado às 2025-01-16 21:22
+Usuário t conectado às 2025-01-16 21:28
+Usuário t conectado às 2025-01-16 21:28
+Usuário t conectado às 2025-01-16 21:29
+Usuário t conectado às 2025-01-16 21:30
+Usuário t conectado às 2025-01-16 21:30
+Usuário t conectado às 2025-01-16 21:31
+Usuário Copelli conectado às 2025-01-16 21:32
+O usuario Copelli alterou sua senha. às 2025-01-16 21:32
+Usuário t conectado às 2025-01-16 21:33
+Usuário t conectado às 2025-01-16 21:36
+Usuário t conectado às 2025-01-16 21:38
+Usuário t conectado às 2025-01-16 21:38
+Usuário t conectado às 2025-01-16 21:40
+Usuário t conectado às 2025-01-16 21:44
+Usuário t conectado às 2025-01-16 21:44
+Usuário t conectado às 2025-01-16 21:49
+Usuário t conectado às 2025-01-16 21:53
+Usuário t conectado às 2025-01-16 21:54
+Usuário t conectado às 2025-01-17 09:13
+Item e criado por t às 2025-01-17 09:13
+Item e criado por t às 2025-01-17 09:13
+Usuário t conectado às 2025-01-17 09:16
+Usuário t conectado às 2025-01-17 09:16
+Usuário t conectado às 2025-01-17 09:18
+Usuário t conectado às 2025-01-17 09:21
+Usuário t conectado às 2025-01-17 09:23
+Usuário t conectado às 2025-01-17 09:24
+Usuário Copelli conectado às 2025-01-17 09:24
+Usuário t conectado às 2025-01-17 09:29
+Usuário t conectado às 2025-01-17 09:32
+Usuário t conectado às 2025-01-17 09:33
+Item e removido por t às 2025-01-17 09:33
+Item e removido por t às 2025-01-17 09:33
+Usuário t conectado às 2025-01-17 09:34
+Usuário t conectado às 2025-01-17 09:35
+Usuário t conectado às 2025-01-17 09:44
+Usuário t conectado às 2025-01-17 09:46
+Usuário t conectado às 2025-01-17 09:47
+Usuário t conectado às 2025-01-17 09:49
+Usuário t conectado às 2025-01-17 09:53
+Usuario 1 criado às 2025-01-17 09:55
+Usuário 1 conectado às 2025-01-17 09:55
+Item p removido por 1 às 2025-01-17 09:55
+Item p removido por 1 às 2025-01-17 09:55
+Item d removido por 1 às 2025-01-17 09:56
+Item d removido por 1 às 2025-01-17 09:56
+Item c removido por 1 às 2025-01-17 09:56
+Item c removido por 1 às 2025-01-17 09:56
+Usuário 1 conectado às 2025-01-17 09:56
+Usuario Joao criado às 2025-01-17 09:58
+Usuário Joao conectado às 2025-01-17 09:58
+O item Caneta foi incrementado em 10 UN pelo usuario Joao às 2025-01-17 09:59
+Usuário 1 conectado às 2025-01-17 10:07
+O usuario 1 alterou sua senha. às 2025-01-17 10:08
+Usuário 1 conectado às 2025-01-17 10:08
+Usuario João criado às 2025-01-17 10:11
+Usuário João conectado às 2025-01-17 10:11
+Item Caderno criado por João às 2025-01-17 10:11
+Item Caderno criado por João às 2025-01-17 10:11
+Usuário t conectado às 2025-01-17 10:15
+Usuário t conectado às 2025-01-17 10:16
+O item Caneta foi incrementado em 20 UN pelo usuario t às 2025-01-17 10:17
+Usuário Joao conectado às 2025-01-17 10:45
+O usuario Joao alterou sua senha. às 2025-01-17 10:46
+Usuário Joao conectado às 2025-01-17 10:47
+O usuario Joao alterou sua senha. às 2025-01-17 10:47
+Usuário t conectado às 2025-01-17 10:48
+Usuário Joao conectado às 2025-01-17 10:50
+Usuário Joao conectado às 2025-01-17 10:52
+Item Fio de cobre criado por Joao às 2025-01-17 10:52
+Item Fio de cobre criado por Joao às 2025-01-17 10:52
+O item Fio de cobre foi incrementado em 10000000000000000000000 metro pelo usuario Joao às 2025-01-17 10:53
+O item Fio de cobre foi retirado em 10000000000000000000000 metro pelo usuario Joao às 2025-01-17 10:53
+O item Fio de cobre foi incrementado em 10 metro pelo usuario Joao às 2025-01-17 10:54
+Usuário Joao conectado às 2025-01-17 10:57
+Item Fio de cobre removido por Joao às 2025-01-17 10:57
+Item Fio de cobre removido por Joao às 2025-01-17 10:57
