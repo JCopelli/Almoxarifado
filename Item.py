@@ -1,10 +1,10 @@
 class Item:
     def __init__(self, nome, estoque, un_medida, preco_un):
         self.__nome = nome
-        self.__estoque = estoque
+        self.__estoque = float(estoque)
         self.__un_medida = un_medida
-        self.__preco_un = preco_un
-        self.__valor_estoque = self.__estoque * self.__preco_un
+        self.__preco_un = float(preco_un)
+        self.__valor_estoque = float(self.__estoque * self.__preco_un)
 
     def mostrar_informacoes(self):
         print(f"Produto: {self.__nome}")
@@ -47,4 +47,24 @@ class Item:
 
     def atualizar_estoque(self):
         self.__valor_estoque = self.__estoque * self.__preco_un
+        return self.__valor_estoque
+
+    @property
+    def nome(self):
+        return self.__nome
+
+    @property
+    def estoque(self):
+        return self.__estoque
+
+    @property
+    def un_medida(self):
+        return self.__un_medida
+
+    @property
+    def preco_un(self):
+        return self.__preco_un
+
+    @property
+    def valor_estoque(self):
         return self.__valor_estoque
