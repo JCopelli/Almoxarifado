@@ -19,16 +19,15 @@ class Usuario:
                 return log
 
         #Desconecta o usuário
-    def logout(self, usuario):
-        if usuario == None:
-            print("você não está conectado!")
-            log = f"Usuario não autenticado tentou se desconectar."
-            return log
-        else:
-            self.__autenticado = False
-            print(f"o usuário {usuario.nome} foi desconectado")
-            log = f"O usuário {usuario.nome} foi desconectado."
-            return log
+    def logout(self):
+        # if usuario == None:
+        #     print("você não está conectado!")
+        #     log = f"Usuario não autenticado tentou se desconectar."
+        #     return log
+        # else:
+        self.__autenticado = False
+        log = f"O usuário {self.__nome} foi desconectado."
+        return log
             
 
     @property
