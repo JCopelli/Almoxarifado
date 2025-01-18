@@ -10,7 +10,7 @@ class Almoxarifado:
     def estoque(self):
         return self.__estoque
    
-    def adicionar_item(self, usuario, nome, estoque, un_medida, preco_un):                                    #Pede os dados do Item a ser cadastrado, atribui a variáveis temporárias 
+    def adicionar_item(self, usuario, nome, estoque, un_medida, preco_un):
         estoque_alt = float(estoque)
         preco_un_alt = float(preco_un)
         valor_estoque = estoque_alt * preco_un_alt
@@ -19,8 +19,7 @@ class Almoxarifado:
         return log
             
 
-    def remover_item(self, usuario, nome):           
+    def remover_item(self, usuario, nome):          
         del self.__estoque[nome]
         log = f"Item {nome} removido por {usuario.nome}"
         return log                                              #cria uma string com os dados da operação realizada e retorna para fora da função
-

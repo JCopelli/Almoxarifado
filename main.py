@@ -63,7 +63,10 @@ def cadastro_usuario(usuarios, nome, senha):
     salvar_alteracoes(usuarios, usuarios_path)
     log = f"Usuario {nome} criado"
     return log
-   
+
+def continuar_acao():
+    input("Pressione enter para continuar")
+    
 
 def main():
 
@@ -102,8 +105,7 @@ def main():
         janela_entrada= ctk.CTkToplevel(janela)
         janela_entrada.title("Sistema de Almoxarifado - Entrada no Estoque")
         janela_entrada.geometry("400x400")
-        janela_entrada.resizable(width=False, height=False)
-        janela_entrada.after(100,janela_entrada.deiconify)
+        janela_entrada.after(50,janela_entrada.deiconify)
         janela_entrada.focus_force()
 
         # Configurar o layout da janela
@@ -162,26 +164,23 @@ def main():
         btn_menu_principal = ctk.CTkButton(frame_central, text="Retornar ao menu principal", command=voltar_ao_menu)
         btn_menu_principal.grid(row=6, column=0, pady=15)
 
+
     def abrir_tela_consulta_estoque():
 
         # Criar nova janela para o menu principal
         janela_consulta_estoque = ctk.CTkToplevel()
         janela_consulta_estoque.title("Menu Principal")
-        janela_consulta_estoque.geometry("450x450")
-        janela_consulta_estoque.resizable(width=False, height=False)
-        janela_consulta_estoque.after(70, janela_consulta_estoque.focus_force)
-
-        janela_consulta_estoque.grid_columnconfigure(0, weight=1)
-        janela_consulta_estoque.grid_columnconfigure(1, weight=1)
-        janela_consulta_estoque.grid_columnconfigure(2, weight=1)
+        janela_consulta_estoque.geometry("500x500")
+        janela_consulta_estoque.after(50, janela_consulta_estoque.deiconify)
+        janela_consulta_estoque.focus_force()
 
         # Cria uma caixa de texto para exibir o estoque
-        textbox = ctk.CTkTextbox(janela_consulta_estoque, width = 300, height = 300, font=("Arial", 16))
-        textbox.grid(row=1, column=1, pady=10, sticky="n", padx=40)
+        textbox = ctk.CTkTextbox(janela_consulta_estoque, width = 300, height = 300)
+        textbox.grid(row=1, column=0, pady=10, sticky="n")
 
         # Header
         titulo = ctk.CTkLabel(janela_consulta_estoque, text="Estoque de Produtos", font=("Arial", 24, "bold"))
-        titulo.grid(row=0, column=1, pady=20, padx=10)
+        titulo.grid(row=0, column=0, pady=20, padx=10)
 
         estoque = almoxarifado1.estoque
         valor_total_estoque = 0
@@ -205,14 +204,15 @@ def main():
             janela_consulta_estoque.destroy()
 
         btn_menu_principal = ctk.CTkButton(janela_consulta_estoque, text="Retornar ao menu principal", command=voltar_ao_menu)
-        btn_menu_principal.grid(row=2, column=1, pady=10)
+        btn_menu_principal.grid(row=2, column=0, columnspan=2, pady=20)
+
+        janela_consulta_estoque.mainloop()
 
     def abrir_tela_cadastrar_item():
 
         janela_cadastrar_item = ctk.CTkToplevel()
         janela_cadastrar_item.title("Menu Principal")
-        janela_cadastrar_item.geometry("500x500")
-        janela_cadastrar_item.resizable(width=False, height=False )
+        janela_cadastrar_item.geometry("500x600")
         janela_cadastrar_item.after(50, janela_cadastrar_item.deiconify)
         janela_cadastrar_item.focus_force()
 
@@ -273,6 +273,24 @@ def main():
             un_medida = campo_un_medida.get()
             preco_un = campo_preco_un.get()
 
+            # Verificar se estoque é um número inteiro válido
+            try:
+                estoque = int(estoque)
+                if estoque < 0:
+                    raise ValueError("O valor do estoque não pode ser negativo.")
+            except:
+                label_msg_criar_item.configure(text=f"O valor de estoque deve ser um número", text_color='red')
+                return
+
+            # Verificar se preco_un é um número flutuante válido
+            try:
+                preco_un = float(preco_un)
+                if preco_un < 0:
+                    raise ValueError("O preço unitário não pode ser negativo.")
+            except:
+                label_msg_criar_item.configure(text=f"O valor de preço deve ser um número", text_color='red')
+                return
+
             if nome in almoxarifado1.estoque:
                 label_msg_criar_item.configure(text=f"O item {nome} já existe!", text_color='red')
 
@@ -284,6 +302,7 @@ def main():
                 label_msg_criar_item.configure(text=f"Item {nome} criado com sucesso!", text_color='green')
                 registrar_log(log)
                 janela_cadastrar_item.after(700, janela_cadastrar_item.destroy)
+
 
 
         label_msg_criar_item = ctk.CTkLabel(frame_central, text="")
@@ -304,8 +323,7 @@ def main():
 
         janela_remover_item = ctk.CTkToplevel()
         janela_remover_item.title("Remover item")
-        janela_remover_item.geometry("400x350")
-        janela_remover_item.resizable(width=False, height=False)
+        janela_remover_item.geometry("400x400")
         janela_remover_item.after(50, janela_remover_item.deiconify)
         janela_remover_item.focus_force()
 
@@ -364,9 +382,8 @@ def main():
 
     def abrir_janela_saida():
         janela_saida= ctk.CTkToplevel(janela)
-        janela_saida.title("Sistema de Almoxarifado - Saída do Estoque")
+        janela_saida.title("Sistema de Almoxarifado - Entrada no Estoque")
         janela_saida.geometry("400x400")
-        janela_saida.resizable(width=False, height=False)
         janela_saida.after(50,janela_saida.deiconify)
         janela_saida.focus_force()
 
@@ -375,7 +392,7 @@ def main():
         janela_saida.grid_rowconfigure(1, weight=1)
 
         # Header
-        header = ctk.CTkLabel(janela_saida, text="Saída do Estoque", font=("Arial", 24, "bold"))
+        header = ctk.CTkLabel(janela_saida, text="Entrada no Estoque", font=("Arial", 24, "bold"))
         header.grid(row=0, column=0, pady=20, padx=10)
 
         # Frame central para alinhar os elementos
@@ -489,7 +506,6 @@ def main():
         janela_alterar_senha = ctk.CTkToplevel(janela)
         janela_alterar_senha.title("Tela de Alterar Senha")
         janela_alterar_senha.geometry("400x500")
-        janela_alterar_senha.resizable(width=False, height=False)
         janela_alterar_senha.after(50, janela_alterar_senha.deiconify)
         janela_alterar_senha.focus_force()
 
@@ -575,13 +591,14 @@ def main():
 
         # Configurar o layout da janela
         janela_menu.grid_columnconfigure(0, weight=1)
+
         # Header
-        header = ctk.CTkLabel(janela_menu, text="Menu Principal", font=("Arial", 28, "bold"))
-        header.grid(row=0, column=0, pady=110)
+        header = ctk.CTkLabel(janela_menu, text="Menu Principal", font=("Arial", 24, "bold"))
+        header.grid(row=0, column=0, pady=130)
 
         # Frame central para alinhar os botões
         frame_menu = ctk.CTkFrame(janela_menu)
-        frame_menu.grid(row=1, column=0, padx=20)
+        frame_menu.grid(row=1, column=0, pady=30, padx=20)
 
         def logout_main():
             global usuario_atual
@@ -624,7 +641,7 @@ def main():
     # Criar a janela principal
     janela = ctk.CTk()
     janela.title("Sistema de Almoxarifado - Login")
-    janela.geometry("1920x1080")
+    janela.state("zoomed")
 
     # Configurar o layout da janela
     janela.grid_columnconfigure(0, weight=1)

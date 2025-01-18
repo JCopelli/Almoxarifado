@@ -1,5 +1,3 @@
-import pwinput 
-
 class Usuario:
     def __init__(self, nome, senha): # autenticado=False
         self.__nome = nome
@@ -20,11 +18,6 @@ class Usuario:
 
         #Desconecta o usuário
     def logout(self):
-        # if usuario == None:
-        #     print("você não está conectado!")
-        #     log = f"Usuario não autenticado tentou se desconectar."
-        #     return log
-        # else:
         self.__autenticado = False
         log = f"O usuário {self.__nome} foi desconectado."
         return log
