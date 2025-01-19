@@ -5,6 +5,7 @@ import Item
 import datetime
 import os
 import customtkinter as ctk
+from tkinter import messagebox, filedialog
 
 dir = os.getcwd()
 def inicializa_pkl(objetos):
@@ -66,7 +67,15 @@ def cadastro_usuario(usuarios, nome, senha):
 
 def continuar_acao():
     input("Pressione enter para continuar")
-    
+
+def gerar_pdf():
+    # Selecionando o local para salvar o arquivo PDF
+    file_path = filedialog.asksaveasfilename(defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")])
+    if file_path:
+        Almoxarifado.gerar_pdf_estoque(file_path)
+        messagebox.showinfo("Sucesso", f"PDF gerado com sucesso: {file_path}")
+    else:
+        messagebox.showwarning("Erro", "Nenhum arquivo selecionado para salvar.")
 
 def main():
 
@@ -206,6 +215,10 @@ def main():
         btn_menu_principal = ctk.CTkButton(janela_consulta_estoque, text="Retornar ao menu principal", command=voltar_ao_menu)
         btn_menu_principal.grid(row=2, column=0, columnspan=2, pady=20)
 
+            # Botão para gerar o PDF
+        btn_gerar_pdf = ctk.CTkButton(janela_consulta_estoque, text="Gerar Relatório de Estoque", command=gerar_pdf)
+        btn_gerar_pdf.grid(row=9, column=0, pady=15)
+
         janela_consulta_estoque.mainloop()
 
     def abrir_tela_cadastrar_item():
@@ -308,7 +321,7 @@ def main():
         label_msg_criar_item = ctk.CTkLabel(frame_central, text="")
         label_msg_criar_item.grid(row=9, column=0)
 
-        # botão criar usuário
+        # botão criar item
         botao_cadastrar_item = ctk.CTkButton(frame_central, text="Cadastrar item", command=criar_item)
         botao_cadastrar_item.grid(row=8, column=0, pady=15)
 

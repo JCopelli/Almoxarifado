@@ -50,3 +50,38 @@ class Almoxarifado:
             return log
         finally:
             print(f"O item {nome} foi removido do almoxarifado!")
+
+    def gerar_pdf_estoque(self, nome_arquivo: str):
+        from reportlab.lib.pagesizes import letter
+        from reportlab.pdfgen import canvas
+
+        c = canvas.Canvas(nome_arquivo, pagesize=letter)
+        c.setFont("Helvetica", 12)
+
+        # Cabeçalho
+        c.drawString(100, 750, f"Relatório de Estoque - {self.__nome}")
+        c.drawString(100, 735, "----------------------------------------------------------")
+
+        # Títulos das colunas
+        c.drawString(100, 715, "Produto")
+        c.drawString(250, 715, "Quantidade")
+        c.drawString(350, 715, "Unidade de Medida")
+        c.drawString(500, 715, "Preço Unitário")
+        c.drawString(650, 715, "Valor em Estoque")
+        c.drawString(100, 705, "----------------------------------------------------------")
+
+        y_position = 690
+        for item in self.__estoque.values():
+            c.drawString(100, y_position, item.get_nome())
+            c.drawString(250, y_position, str(item.get_estoque()))
+            c.drawString(350, y_position, item.get_un_medida())
+            c.drawString(500, y_position, f"R$ {item.get_preco_un():.2f}")
+            c.drawString(650, y_position, f"R$ {item.get_valor_estoque():.2f}")
+            y_position -= 20  # Move para a próxima linha
+
+            if y_position < 50:  # Se a página estiver cheia, cria uma nova página
+                c.showPage()
+                c.setFont("Helvetica", 12)
+                y_position = 750
+
+        c.save()
