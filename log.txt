@@ -294,3 +294,13 @@ Usuário t conectado às 2025-01-17 21:14
 Usuario Daniel criado às 2025-01-17 21:19
 Usuário Daniel conectado às 2025-01-17 21:19
 Usuário Daniel conectado às 2025-01-17 21:24
+Usuario Lucas criado às 2025-01-18 15:50
+Usuário Lucas conectado às 2025-01-18 15:51
+Usuário Lucas conectado às 2025-01-19 15:52
+Item Garrafa criado por Lucas às 2025-01-19 15:53
+Item Garrafa criado por Lucas às 2025-01-19 15:53
+Usuário Lucas conectado às 2025-01-19 15:56
+O item Garrafa foi incrementado em 5.0 Un pelo usuário Lucas às 2025-01-19 15:56
+O item Garrafa foi retirado em 5.0 Un pelo usuário Lucas às 2025-01-19 15:56
+Usuário Lucas conectado às 2025-01-19 15:58
+O usuário Lucas alterou sua senha. às 2025-01-19 15:58
