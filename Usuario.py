@@ -11,9 +11,8 @@ class Usuario:
         try:
             if senha == self.__senha:
                 self.__autenticado = True
-                return f"Usuário {self.__nome} autenticado com sucesso."
             else:
-                return "Senha incorreta."
+                return False
         except Exception as e:
             return f"Erro durante o login: {e}"
         finally:

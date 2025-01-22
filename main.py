@@ -5,7 +5,11 @@ import Item
 import datetime
 import os
 import customtkinter as ctk
+import tkinter as tk
 from tkinter import messagebox, filedialog
+from fpdf import FPDF
+from functools import partial
+import sys
 
 dir = os.getcwd()
 def inicializa_pkl(objetos):
@@ -68,16 +72,125 @@ def cadastro_usuario(usuarios, nome, senha):
 def continuar_acao():
     input("Pressione enter para continuar")
 
-def gerar_pdf():
-    # Selecionando o local para salvar o arquivo PDF
-    file_path = filedialog.asksaveasfilename(defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")])
-    if file_path:
-        Almoxarifado.gerar_pdf_estoque(file_path)
-        messagebox.showinfo("Sucesso", f"PDF gerado com sucesso: {file_path}")
+def gerar_pdf_estoque(dicionario):
+    """Função para gerar um PDF com os dados do dicionário."""
+    # Criando o objeto PDF
+    pdf = FPDF()
+    pdf.set_auto_page_break(auto=True, margin=15)
+    pdf.add_page()
+
+    # Definindo o título do PDF
+    pdf.set_font("Arial", 'B', 16)
+    pdf.cell(200, 10, txt="Almoxarifado", ln=True, align='C')
+
+    # Adicionando uma linha em branco
+    pdf.ln(10)
+
+    # Definindo a fonte para o corpo do texto
+    pdf.set_font("Arial", size=12)
+
+    valor_total_estoque = 0
+
+    for item in dicionario.estoque.values():  # Iterando sobre os valores do dicionário
+        texto_produto = f"Produto: {item.nome}\n"
+        texto_produto += f"Quantidade: {item.estoque}\n"
+        texto_produto += f"Unidade de medida: {item.un_medida}\n"
+        texto_produto += f"Preço por unidade: R${item.preco_un:.2f} por {item.un_medida}\n"
+        texto_produto += f"Valor em estoque: R${item.preco_un * item.estoque:.2f}\n\n"
+            
+        pdf.multi_cell(0, 10, texto_produto)
+            
+        valor_total_estoque += item.preco_un * item.estoque  # Corrigido: acessando item e não valor
+
+    # Adicionando o valor total do estoque
+    pdf.ln(5)
+    pdf.set_font("Arial", 'B', 12)
+    pdf.cell(200, 10, txt=f"Valor total em estoque: R${valor_total_estoque:.2f}", ln=True, align='C')
+
+    # Abrir o diálogo para o usuário escolher onde salvar o arquivo
+    root = tk.Tk()
+    root.withdraw()  # Esconde a janela principal do Tkinter
+
+    caminho_pdf = filedialog.asksaveasfilename(
+        defaultextension=".pdf", 
+        filetypes=[("PDF files", "*.pdf")], 
+        title="Escolha onde salvar o arquivo PDF"
+    )
+
+    if caminho_pdf:  # Verifica se o usuário escolheu um caminho
+        # Gerando o PDF no caminho especificado
+        pdf.output(caminho_pdf)
+        print(f"PDF gerado com sucesso: {caminho_pdf}")
     else:
-        messagebox.showwarning("Erro", "Nenhum arquivo selecionado para salvar.")
+        print("Operação cancelada. Nenhum arquivo foi salvo.")
+
+def relatorio_atividade_pdf():
+    
+    # Determinar o caminho do arquivo 'log.txt' no diretório atual
+    caminho_arquivo_texto = os.path.join(os.getcwd(), "log.txt")
+
+    # Verificar se o arquivo 'log.txt' existe no diretório atual
+    if not os.path.exists(caminho_arquivo_texto):
+        print(f"O arquivo 'log.txt' não foi encontrado no diretório: {os.getcwd()}")
+        return
+
+    # Tentar abrir e ler o conteúdo do arquivo de texto
+    try:
+        with open(caminho_arquivo_texto, 'r') as file:
+            conteudo_texto = file.read()
+    except Exception as e:
+        print(f"Erro ao ler o arquivo de texto: {e}")
+        return
+    
+    # Criando o objeto PDF
+    pdf = FPDF()
+    pdf.set_auto_page_break(auto=True, margin=15)
+    pdf.add_page()
+
+    # Definindo o título do PDF
+    pdf.set_font("Arial", 'B', 16)
+    pdf.cell(200, 10, txt="Conteúdo do Arquivo log.txt", ln=True, align='C')
+
+    # Adicionando uma linha em branco
+    pdf.ln(10)
+
+    # Definindo a fonte para o corpo do texto
+    pdf.set_font("Arial", size=12)
+
+    # Adicionando o conteúdo do arquivo de texto no PDF
+    pdf.multi_cell(0, 10, conteudo_texto)
+
+    # Abrir o diálogo para o usuário escolher onde salvar o arquivo PDF
+    caminho_pdf = filedialog.asksaveasfilename(
+        defaultextension=".pdf", 
+        filetypes=[("PDF files", "*.pdf")], 
+        title="Escolha onde salvar o arquivo PDF"
+    )
+
+    if caminho_pdf:  # Verifica se o usuário escolheu um caminho
+        # Gerando o PDF no caminho especificado
+        pdf.output(caminho_pdf)
+        print(f"PDF gerado com sucesso: {caminho_pdf}")
+    else:
+        print("Operação cancelada. Nenhum arquivo foi salvo.")
+
+def modulo_instalado(modulo):
+    try:
+        __import__(modulo)
+        return True
+    except ModuleNotFoundError:
+        return False
+
+def instalando_modulo(modulo):
+    if not modulo_instalado(modulo):
+        os.system(f"{sys.executable} -m pip install {modulo}")
+    else:
+        print(f"Módulo {modulo} ja está instalado!")
 
 def main():
+
+    # instalando_modulo(customtkinter)
+    # instalando_modulo(fpdf)
 
     usuario_atual = None
 
@@ -176,6 +289,8 @@ def main():
 
     def abrir_tela_consulta_estoque():
 
+        global usuario_atual
+
         # Criar nova janela para o menu principal
         janela_consulta_estoque = ctk.CTkToplevel()
         janela_consulta_estoque.title("Menu Principal")
@@ -216,8 +331,9 @@ def main():
         btn_menu_principal.grid(row=2, column=0, columnspan=2, pady=20)
 
             # Botão para gerar o PDF
-        btn_gerar_pdf = ctk.CTkButton(janela_consulta_estoque, text="Gerar Relatório de Estoque", command=gerar_pdf)
+        btn_gerar_pdf = ctk.CTkButton(janela_consulta_estoque, text="Gerar Relatório de Estoque", command=partial(gerar_pdf_estoque, almoxarifado1))
         btn_gerar_pdf.grid(row=9, column=0, pady=15)
+        registrar_log(f"O usuario {usuario_atual.nome} imprimiu a lista de estoque.")
 
         janela_consulta_estoque.mainloop()
 
@@ -624,7 +740,7 @@ def main():
 
         # Mensagem
         label_msg_logout = ctk.CTkLabel(frame_menu, text="")
-        label_msg_logout.grid(row = 9, column=0)
+        label_msg_logout.grid(row = 10, column=0)
         
         # Botões de opções do menu
         botoes_menu = [
@@ -635,6 +751,7 @@ def main():
             ("Remover Item", abrir_tela_remover_item),
             ("Mudar senha", abrir_tela_alterar_senha),
             ("Logout", logout_main),
+            ("Relatório de atividade", relatorio_atividade_pdf),
             ("Encerrar", exit)
         ]
 

@@ -311,3 +311,45 @@ Usuário Lucas conectado às 2025-01-19 17:54
 Usuário Lucas conectado às 2025-01-19 17:57
 Usuário Lucas conectado às 2025-01-19 18:02
 Usuário Lucas conectado às 2025-01-19 18:09
+Usuário Joao conectado às 2025-01-21 19:50
+Usuário t conectado às 2025-01-21 19:50
+Usuário t conectado às 2025-01-21 19:52
+Usuário t conectado às 2025-01-21 19:59
+Usuário t conectado às 2025-01-21 20:09
+Usuário t conectado às 2025-01-21 20:10
+Usuário t conectado às 2025-01-21 20:13
+Usuário t conectado às 2025-01-21 20:14
+Usuário t conectado às 2025-01-21 20:15
+Usuário t conectado às 2025-01-21 20:16
+Usuário t conectado às 2025-01-21 20:19
+Usuário t conectado às 2025-01-21 20:23
+Usuário t conectado às 2025-01-21 20:25
+Usuário t conectado às 2025-01-21 20:35
+Usuário t conectado às 2025-01-21 20:40
+Usuário t conectado às 2025-01-21 20:47
+Usuário t conectado às 2025-01-21 20:48
+Usuário t conectado às 2025-01-21 20:54
+O usuarioNone imprimiu uma lista do estoque. às 2025-01-21 20:54
+Usuário t conectado às 2025-01-21 20:56
+O usuario <Usuario.Usuario object at 0x000001A8C46792D0> imprimiu a lista de estoque. às 2025-01-21 20:56
+Usuário t conectado às 2025-01-21 20:57
+O usuario t imprimiu a lista de estoque. às 2025-01-21 20:57
+Usuário t conectado às 2025-01-21 21:09
+O usuario t imprimiu a lista de estoque. às 2025-01-21 21:09
+Usuário t conectado às 2025-01-21 21:14
+O usuario t imprimiu a lista de estoque. às 2025-01-21 21:14
+O item Caneta foi incrementado em 20.0 UN pelo usuário t às 2025-01-21 21:15
+O usuario t imprimiu a lista de estoque. às 2025-01-21 21:15
+Usuário t conectado às 2025-01-21 21:27
+Usuário t conectado às 2025-01-21 21:29
+Usuário 1 conectado às 2025-01-21 21:31
+Usuário 1 conectado às 2025-01-21 21:31
+Usuário Joao conectado às 2025-01-21 21:31
+Usuário Joao conectado às 2025-01-21 21:32
+Usuário t conectado às 2025-01-21 21:35
+Usuário t conectado às 2025-01-21 21:35
+Usuário t conectado às 2025-01-21 21:38
+Usuario Chiba criado às 2025-01-21 21:40
+Usuário Chiba conectado às 2025-01-21 21:40
+O usuario Chiba imprimiu a lista de estoque. às 2025-01-21 21:40
+Usuário t conectado às 2025-01-21 21:43
