@@ -353,3 +353,7 @@ Usuario Chiba criado às 2025-01-21 21:40
 Usuário Chiba conectado às 2025-01-21 21:40
 O usuario Chiba imprimiu a lista de estoque. às 2025-01-21 21:40
 Usuário t conectado às 2025-01-21 21:43
+Usuário t conectado às 2025-01-23 20:40
+O usuario t imprimiu a lista de estoque. às 2025-01-23 20:41
+Usuário t conectado às 2025-01-23 20:43
+O usuario t imprimiu a lista de estoque. às 2025-01-23 20:43

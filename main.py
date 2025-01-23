@@ -1,4 +1,4 @@
-import Almoxarifado 
+import Almoxarifado
 import pickle
 import Usuario
 import Item
@@ -189,8 +189,8 @@ def instalando_modulo(modulo):
 
 def main():
 
-    # instalando_modulo(customtkinter)
-    # instalando_modulo(fpdf)
+    instalando_modulo("customtkinter")
+    instalando_modulo("fpdf")
 
     usuario_atual = None
 
